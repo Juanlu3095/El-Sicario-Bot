@@ -1,0 +1,246 @@
+{
+    
+        "WildPokemon":{
+
+            "Bulbasaur":{
+                "Name":"Bulbasaur",
+                "ID":1,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
+            },
+
+            "Ivysaur":{
+                "Name":"Ivysaur",
+                "ID":2,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png"
+            },
+
+            "Venusaur":{
+                "Name":"Venusaur",
+                "ID":3,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png"
+            },
+
+            "Charmander":{
+                "Name":"Charmander",
+                "ID":4,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png"
+            },
+
+            "Charmeleon":{
+                "Name":"Charmeleon",
+                "ID":5,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png"
+            },
+
+            "Charizard":{
+                "Name":"Charizard",
+                "ID":6,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png"
+            },
+
+            "Squirtle":{
+                "Name":"Squirtle",
+                "ID":7,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png"
+            },
+            
+            "Wartortle":{
+                "Name":"Wartortle",
+                "ID":8,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png"
+            },
+
+            "Blastoise":{
+                "Name":"Blastoise",
+                "ID":9,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png"
+            },
+
+            "Caterpie":{
+                "Name":"Caterpie",
+                "ID":10,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png"
+            },
+
+            "Metapod":{
+                "Name":"Metapod",
+                "ID":11,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/011.png"
+            },
+
+            "Butterfree":{
+                "Name":"Butterfree",
+                "ID":12,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/012.png"
+            },
+
+            "Weedle":{
+                "Name":"Weedle",
+                "ID":13,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.png"
+            },
+
+            "Kakuna":{
+                "Name":"Kakuna",
+                "ID":14,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/014.png"
+            },
+
+            "Beedrill":{
+                "Name":"Beedrill",
+                "ID":15,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/015.png"
+            },
+
+            "Pidgey":{
+                "Name":"Pidgey",
+                "ID":16,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png"
+            },
+
+            "Pidgeotto":{
+                "Name":"Pidgeotto",
+                "ID":17,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/017.png"
+            },
+
+            "Pidgeot":{
+                "Name":"Pidgeot",
+                "ID":18,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/018.png"
+            },
+
+            "Rattata":{
+                "Name":"Rattata",
+                "ID":19,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/019.png"
+            },
+        
+            "Raticate":{
+                "Name":"Raticate",
+                "ID":20,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/020.png"
+            },
+
+            "Spearow":{
+                "Name":"Spearow",
+                "ID":21,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/021.png"
+            },
+
+            "Fearow":{
+                "Name":"Fearow",
+                "ID":22,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/022.png"
+            },
+
+            "Ekans":{
+                "Name":"Ekans",
+                "ID":23,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/023.png"
+            },
+
+            "Arbok":{
+                "Name":"Arbok",
+                "ID":24,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/024.png"
+            },
+
+            "Pikachu":{
+                "Name":"Pikachu",
+                "ID":25,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
+            },
+
+            "Raichu":{
+                "Name":"Raichu",
+                "ID":26,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/026.png"
+            },
+
+            "Sandshrew":{
+                "Name":"Sandshrew",
+                "ID":27,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/027.png"
+            },
+
+            "Sandslash":{
+                "Name":"Sandslash",
+                "ID":28,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/028.png"
+            },
+
+            "Nidoran-H":{
+                "Name":"Nidoran-H",
+                "ID":29,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/029.png"
+            },
+
+            "Nidorina":{
+                "Name":"Nidorina",
+                "ID":30,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/030.png"
+            },
+
+            "Nidoqueen":{
+                "Name":"Nidoqueen",
+                "ID":31,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/031.png"
+            },
+
+            "Nidoran-M":{
+                "Name":"Nidoran-M",
+                "ID":32,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/032.png"
+            },
+
+            "Nidorino":{
+                "Name":"Nidorino",
+                "ID":33,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/033.png"
+            },
+
+            "Nidoking":{
+                "Name":"Nidoking",
+                "ID":34,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/034.png"
+            },
+
+            "Clefairy":{
+                "Name":"Clefairy",
+                "ID":35,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/035.png"
+            },
+
+            "Clefable":{
+                "Name":"Clefable",
+                "ID":36,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/036.png"
+            },
+
+            "Vulpix":{
+                "Name":"Vulpix",
+                "ID":37,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/037.png"
+            },
+            
+            "Ninetales":{
+                "Name":"Ninetales",
+                "ID":38,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/038.png"
+            },
+
+            "Jigglypuff":{
+                "Name":"Jigglypuff",
+                "ID":39,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/039.png"
+            },
+
+            "Wigglytuff":{
+                "Name":"Wigglytuff",
+                "ID":40,
+                "Image":"https://assets.pokemon.com/assets/cms2/img/pokedex/full/040.png"
+            }
+        }
+    
+}
