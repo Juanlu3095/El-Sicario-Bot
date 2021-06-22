@@ -260,9 +260,11 @@ if(message.content.startsWith(prefix +"ruta1")){
 
   collector.on('collect', m => {
     message.channel.send(`¡Has capturado un ${appearedpokemon.Name}!`)
-    if(appearedpokemon.Name != `pokemonlist_${message.author.id}`){
+    let pokemon = db.fetch(`pokemonlist_${message.author.id}`)
+    if(pokemon===null||!pokemon.includes(appearedpokemon.Name)) {
     db.push(`pokemonlist_${message.author.id}`, appearedpokemon.Name)
     db.add(`pokemon_${message.author.id}`, 1)
+    Pokedex = Pokedex + 1
     
    } /*if(collected.first().content === appearedpokemon.Name)*/
 
