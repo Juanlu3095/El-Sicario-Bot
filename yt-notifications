@@ -1,0 +1,18 @@
+const channelid = "UCyg5cRfsDOlr5QG9oCwsXvw";
+
+const newvideo = "810241612767690752";
+
+const Youtube = require('youtube-notification');
+
+const notifier = new Youtube({
+    hubCallback: 'https://necessary-probable-slouch.glitch.me/yt',
+    secret: 'Thanks_To_Use_MY_ProJect_BY_LA|Ali#1229'
+});
+notifier.setup();
+
+notifier.on('notified', data => {
+    console.log('New Video in ${data.channel.name}');
+    client.channels.cache.get(newvideo).send(`New Video Uploaded In ${data.channel.name}, Video: ${data.channel.title},Link: ${data.channel.link}`);
+
+});
+notifier.subscribe(channelid);
