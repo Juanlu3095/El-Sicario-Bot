@@ -4,7 +4,9 @@ const  client = new Discord.Client();
 /*const dquiz = require ('discord-quiz');*/
 const config = require("./config.json");
 const db = require("quick.db");
+/*const gonzalo = require('./prueba.js');*/
 require("./html.js");
+/*const youtube = require("yt.js")*/
 var ayuda = function(message, client) {//variable ayuda con todos los comandos
   var username =  message.author.username;
   var avatar = message.author.avatarURL();
@@ -120,6 +122,8 @@ var datos = function(message, client) {
   var username =  message.author.username;
   var avatar = message.author.avatarURL();
   var Id = message.author.id;
+  let Puntos = db.fetch(`Puntoslist_${message.author.id}`);
+  let Pokedex = db.fetch(`pokemon_${message.author.id}`)
   message.channel.send({embed: 
     {
       color: 3447003,
@@ -141,7 +145,7 @@ var datos = function(message, client) {
         },
         {
           name: "Pokémon capturados",
-          value: Pokedex
+          value:  Pokedex
         },
         {
           name: "Medallas",
@@ -190,45 +194,8 @@ client.on('message', message => {
 
 /////////////////////MENSAJE CAPTURAR POKÉMON s!pokemon//////////////////
 
-const kanto = require("./Kanto.json");
-
-var Pokedex = 0
-var Puntos = 0
-
-client.on('message', message => {
-  if(message.content.startsWith(prefix +"pokemon")){
-    
-    message.channel.send({embed: {
-      color: 3447003,
-      description: "¡Explora cada uno de los rincones de Kanto y captura a las 151 criaturas!\nPara ello debes introducir el comando s!(lugar).\nP.ej: s!ruta1\n\nConsejo: Utiliza el comando s!mapa para consultar el mapa de la región."
-    }})
-  }})
-
-
-/*client.on('message', message => {
-if(message.content.startsWith(prefix +"ruta")){
-  
-  Pokedex = Pokedex + 1
-  Puntos = Puntos + 3
-}})*/
-
-const Ruta1 = [/*kanto.WildPokemon.Pidgey, kanto.WildPokemon.Rattata,*/ kanto.WildPokemon.Kakuna]
-const Ruta2 = [kanto.WildPokemon.Pidgey, kanto.WildPokemon.Rattata, kanto.WildPokemon.Caterpie, kanto.WildPokemon.Weedle]
-
-client.on('message', message => {
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
-})
-
-function random_item(Ruta1)
-{
-  return Ruta1[Math.floor(Math.random()*Ruta1.length)];
-}
-
-function random_item2(Ruta2)
-{
-  return Ruta2[Math.floor(Math.random()*Ruta2.length)];
-}
+/*var Pokedex = 0*/
+/*var Puntos = 0*/
 
 client.on('message', message => {
   if(message.content.startsWith(prefix +"team")){
@@ -237,64 +204,78 @@ client.on('message', message => {
     message.channel.send(pokemon)
   }})
 
-client.on('message', message => {
-if(message.content.startsWith(prefix +"ruta1")){
-  var appearedpokemon = random_item(Ruta1);
-  
-  const filter = m => m.content.includes('s!catch');
-  const collector = message.channel.createMessageCollector(filter , {time: 15000}); 
+    const lista = require("./ListaPokemon.json");
 
-  var embed = new Discord.MessageEmbed()
-
-  .setAuthor(`${message.author.username}`,`${message.author.avatarURL()}`)
-  .setTitle(`¡Un ${appearedpokemon.Name} salvaje apareció!\n(s!catch para capturar, límite: 20 segundos)\n`)
-  .setImage(`${appearedpokemon.Image}`)
-  .setTimestamp()
-  .setFooter("El Sicario")
-
-  Puntos = Puntos + 3
-  /*db.push(`pokemonlist_${message.author.id}`, appearedpokemon.Name)
-  db.add(`pokemon_${message.author.id}`, 1)*/
-
-  message.channel.send(embed)
-
-  collector.on('collect', m => {
-    message.channel.send(`¡Has capturado un ${appearedpokemon.Name}!`)
-    let pokemon = db.fetch(`pokemonlist_${message.author.id}`)
-    if(pokemon===null||!pokemon.includes(appearedpokemon.Name)) {
-    db.push(`pokemonlist_${message.author.id}`, appearedpokemon.Name)
-    db.add(`pokemon_${message.author.id}`, 1)
-    Pokedex = Pokedex + 1
     
-   } /*if(collected.first().content === appearedpokemon.Name)*/
-
-  });
-
-  collector.on('end', collected=> {
-    message.channel.send(/*`El ${appearedpokemon.Name} salvaje ha huido`*/);
-  });
-}})
-
-/*if(collected.first().content === appearedpokemon.Name){
-  db.push(`pokemonlist_${message.author.id}`, appearedpokemon.Name)
-  db.add(`pokemon_${message.author.id}`, appearedpokemon.ID)
-}*/
-
-client.on('message', message => {
-  if(message.content.startsWith(prefix +"ruta2")){
-    var appearedpokemon = random_item2(Ruta2);
+    client.on('message', message => {
+      if(message.content.startsWith(prefix +"pokemon")){
+        
+        message.channel.send({embed: {
+          color: 3447003,
+          description: "¡Explora cada uno de los rincones de Kanto y captura a las 151 criaturas!\nPara ello debes introducir el comando s!(lugar).\nP.ej: s!ruta1\n\nConsejo: Utiliza el comando s!mapa para consultar el mapa de la región."
+        }})
+      }})
     
-    var embed = new Discord.MessageEmbed()
-  
-    .setAuthor(`${message.author.username}`,`${message.author.avatarURL()}`)
-    .setTitle(`¡Has capturado un ${appearedpokemon.Name}!`)
-    .setImage(`${appearedpokemon.Image}`)
-    .setTimestamp()
-    .setFooter("El Sicario")
-  
-    message.channel.send(embed)
-  }})
-
+    const Ruta1 = [lista.WildPokemon.Pidgey, lista.WildPokemon.Rattata]
+    const Ruta2 = [lista.WildPokemon.Pidgey, lista.WildPokemon.Rattata, lista.WildPokemon.Caterpie, lista.WildPokemon.Weedle]
+    
+    client.on('message', message => {
+        const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+        const command = args.shift().toLowerCase();
+      })
+      
+    function random_item(Ruta1)
+    {
+      return Ruta1[Math.floor(Math.random()*Ruta1.length)];
+    }
+    
+    function random_item2(Ruta2)
+    {
+      return Ruta2[Math.floor(Math.random()*Ruta2.length)];
+    }
+    
+    client.on('message', message => {
+      if(message.content.startsWith(prefix +"team")){
+        let pokemon = db.fetch(`pokemonlist_${message.author.id}`)
+    
+        message.channel.send(pokemon)
+      }})
+    
+    client.on('message', message => {
+    if(message.content == prefix + "ruta1"){
+      var appearedpokemon = random_item(Ruta1);
+      
+      const filter = m => m.content.includes('s!catch');
+      const collector = message.channel.createMessageCollector(filter , {time: 20000}); 
+    
+      var embed = new Discord.MessageEmbed()
+    
+      .setAuthor(`${message.author.username}`,`${message.author.avatarURL()}`)
+      .setTitle(`¡Un ${appearedpokemon.Name} salvaje apareció!\n(s!catch para capturar, límite: 20 segundos)\n`)
+      .setImage(`${appearedpokemon.Image}`)
+      .setTimestamp()
+      .setFooter("El Sicario")
+    
+      message.channel.send(embed)
+    
+      collector.on('collect', m => {
+        message.channel.send(`¡Has capturado un ${appearedpokemon.Name}!`)
+        let pokemon = db.fetch(`pokemonlist_${message.author.id}`)
+        let Puntos = db.fetch(`Puntoslist_${message.author.id}`)
+        db.add(`Puntoslist_${message.author.id}`, 3)
+        
+        if(pokemon===null||!pokemon.includes(appearedpokemon.Name)) {
+        db.push(`pokemonlist_${message.author.id}`, appearedpokemon.Name)
+        db.add(`pokemon_${message.author.id}`, 1)
+        message.channel.send(`${appearedpokemon.Name} se ha registrado en tu Pokédex`)
+       } 
+    
+      });
+    
+      collector.on('end', collected=> {
+        message.channel.send(/*`El ${appearedpokemon.Name} salvaje ha huido`*/);
+      });
+    }})
 
 /////////////////////MENSAJE GYM LEADER s!gym////////////////////////////
 
@@ -314,6 +295,40 @@ client.on('message', message => {
     ayuda(message, client);
   } 
 });
+
+
+///////////////////////NOTIFICACIONES DE YOUTUBE//////////////////////////
+
+const channelid = "UCyg5cRfsDOlr5QG9oCwsXvw";
+
+const newvideo = "810241612767690752";
+
+const Youtube = require('youtube-notification');
+
+const notifier = new Youtube({
+    hubCallback: 'https://necessary-probable-slouch.glitch.me/yt',
+    secret: 'Thanks_To_Use_MY_ProJect_BY_LA|Ali#1229'
+});
+notifier.setup();
+
+notifier.on('notified', data => {
+    console.log('New Video in ${data.channel.name}');
+    client.channels.cache.get(newvideo).send(`New Video Uploaded In ${data.channel.name}, Video: ${data.channel.title},Link: ${data.channel.link}`);
+
+});
+notifier.subscribe(channelid);
+
+
+/*client.on('message', message => { 
+  if(message.content.startsWith(prefix +"pepe")){
+    gonzalo.pepe(message,client);
+  }
+  });*/
+
+  /*gonzalo.pepe(message,client);*/
+
+  
+
  // end if
 
 // con esto coge los archivos del .config
